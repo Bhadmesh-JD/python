@@ -1,0 +1,40 @@
+if __name__ == '__main__':
+    # Initialize an empty list
+    my_list = []
+    
+    # Read the number of commands from standard input
+    # The user is expected to run this in a programming environment
+    # where input can be provided (like a terminal or online judge)
+    N = int(input())
+    
+    # Iterate through the number of commands
+    for _ in range(N):
+        # Read the command line and split it into parts
+        command_line = input().split()
+        command = command_line[0]
+        
+        # Perform the corresponding list operation based on the command
+        if command == "insert":
+            # Arguments for insert are index (i) and element (e)
+            i = int(command_line[1])
+            e = int(command_line[2])
+            my_list.insert(i, e)
+        elif command == "print":
+            print(my_list)
+        elif command == "remove":
+            # Argument for remove is the element (e) to delete
+            e = int(command_line[1])
+            my_list.remove(e)
+        elif command == "append":
+            # Argument for append is the element (e) to add
+            e = int(command_line[1])
+            my_list.append(e)
+        elif command == "sort":
+            my_list.sort()
+        elif command == "pop":
+            my_list.pop()
+        elif command == "reverse":
+            my_list.reverse()
+        else:
+            # Optional: handle unexpected commands
+            pass
